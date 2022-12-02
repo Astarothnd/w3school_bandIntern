@@ -1,0 +1,438 @@
+/* reset css */
+:root{
+    --header-height:60px;
+    --content-width:800px;
+}   
+
+*{
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.text-white{
+    color: aliceblue !important;
+}
+
+/* 
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Tổng quan đến chi tiết
+*/
+
+/* 
+1. Vị trí
+2. Kích thước (width, height)
+3. Màu sắc
+4. Kiểu dáng(kiểu chữ, tròn, vuông)
+*/
+
+#main{
+    background-color: snow;
+}
+/* -------------PAGE HEADER-------------- */
+#header{
+    height: var(--header-height);
+    background-color: black;
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+/* ------NAVIGATION----- */
+#nav{
+    display: inline-block;
+}
+#nav > li{
+    display: inline-block;
+    position: relative;
+}
+#nav >li >a{
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+#nav li a{
+    line-height: var(--header-height);
+    text-decoration: none;
+
+    padding: 0 12px;
+    display: block;
+}
+
+#nav>li:hover>a,
+#nav .subnav li:hover a{
+    color: black;
+    background-color: rgb(194, 194, 194);
+}
+#nav li:hover .subnav{
+    display: block;
+}
+#nav .subnav{
+    position: absolute;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+#nav .subnav li {
+    display: block;
+}
+#nav .subnav a{
+    display: block;
+    color: black;
+}
+/* -------------SEARCH BUTTON-------------- */
+
+#header .search-btn{
+    float: right;
+    height: var(--header-height);
+    padding: 0 calc(var(--header-height) / 2);
+}
+#header .search-btn:hover{
+    background-color: rgb(245, 56, 56);
+    cursor: pointer;
+}
+#header .search-icon{
+    color: aliceblue;
+    font-size: calc(var(--header-height) / 3);
+    line-height: var(--header-height);
+}
+
+/* -------------PAGE SLIDER-------------- */
+#slider{
+    margin-top: var(--header-height);
+    padding-top: 50%;
+    position: relative;
+    background: top center / cover no-repeat url(/w3school_Band/img/ny.jpg);
+}
+#slider .text-content{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    bottom: 0;
+    width: 100%;
+}
+#slider .text-content >h3{
+    text-align: center;
+    font-size: var(--header-height);
+}
+#slider .text-content >p{
+    text-align: center;
+    display: block;
+    font-size: calc(var(--header-height) / 2);
+    padding: 20px 0;
+}
+/* ---------------------------PAGE CONTENT---------------------------- */
+#content{
+    min-height: 2000px;
+    background-color: rgb(248, 248, 248);
+}
+/* --PAGE CONTENT VARIABLE-- */
+#content .content-section{
+    width: var(--content-width);
+    margin: 0 auto;
+    padding: 64px 16px;
+}
+
+#content .section-heading{
+    padding: 10px 0;
+    font-size: 50px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+#content .section-subheading{
+    color: rgb(162, 164, 167);
+    padding: 20px 0;
+    
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+}
+#content .section-box{
+    margin: 32px 0;
+    padding: 0;
+    overflow: hidden;
+}
+#content .section-box .content-box{
+    float: left;
+    width: calc(100% /3);
+    text-align: center;
+}
+.content-box>.band-img{
+    width: 60%;
+    margin-top: 15px;
+    border-radius: 8px;
+
+}
+/* ----------PAGE CONTENT SINGLE---------- */
+
+/* FIRST CONTENT THE BAND */
+#content>.content-section>.section-text{
+    font-size: 20px;
+    text-align: justify;
+    line-height: 1.5;
+}
+/* SECOND CONTENT TOUR DATES */
+
+#content>.black-section{
+    background-color: black;
+}
+.section-list{
+    background-color: aliceblue;
+    margin-top: 40px;
+}
+.section-list>li{
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    color: rgb(116, 112, 112);
+    list-style: none;
+}
+.section-list .sold-out{
+    background-color: #f44336;
+    color: white;
+    padding: 8px;
+    margin-left: 16px;
+}
+.section-list .quantity{
+    float: right;
+    color: #ddd;
+    background-color: black;
+    margin-top: -5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+}
+
+.section-box>.ticket-box{
+    margin-top: 32px;
+    background-color: white;
+    width: 32%;
+    float: left;
+    margin-left: 2%;
+}
+.section-box>.ticket-box:first-child{
+    margin-left: 0;
+}
+.ticket-box > .ticket-img{
+    width: 100%;
+}
+.ticket-box >.ticket-img:hover{
+    opacity: 0.6;
+}
+.ticket-box>.section-ticket{
+    padding: 20px;
+}
+
+.section-ticket>p{
+    padding: 12px 0;
+}
+.section-ticket>p:nth-child(1){
+    font-weight: bold;
+}
+.section-ticket>p:nth-child(2){
+    color: rgb(160, 158, 158);
+    font-size: 14px;
+}
+.section-ticket>p:nth-child(3){
+    font-size: 14px;
+}
+.ticket-buy{
+    background-color: black;
+    border: 0;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+}
+.ticket-buy:hover{
+    background-color: #ddd;
+    color: black;
+    cursor: pointer;
+}
+/* -------------PAGE CONTENT: BUYING TICKET INFORMATION-------------- */
+.ticketModel{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding-top: 100px;
+    display: none;
+    transition: 0.2s;
+}
+.ticketModel.open{
+    display: block;
+}
+@keyframes ticketModelFade {
+    from{
+        transform: translateY(-200px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+.ticketModel .Model-container {
+    margin: 0 auto;
+    width: 500px;
+    max-width: calc(100% - 32px);
+    background-color: white;
+    animation: ticketModelFade 0.3s;
+}
+
+/* header */
+.ticketModel .Model-header{
+    background-color: #009688;
+    padding: 32px 16px;
+    position: relative;
+}
+.Model-header .Model-exit-text{
+    top: 0;
+    right: 0;
+    position: absolute;
+    color: white;
+    padding: 8px 16px;
+    font-size: 24px;
+}
+.Model-header .Model-exit-text:hover{
+    color: #009688;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.Model-header .Model-heading{
+    text-align: center;
+    color: white;
+    margin: 10px 0;
+    font-size: 30px;
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+/* content */
+.ticketModel .Model-content{
+    padding: 0px 16px;
+}
+
+.Model-content .Model-text{
+    margin: 16px 0;
+    color: rgb(117, 117, 117);
+}
+
+.Model-content .Model-textbox{
+    padding: 8px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.Model-content .Model-pay-button{
+    background-color: #009688;
+    width: 100%;
+    margin: 32px 0;
+    padding: 16px 8px;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+.Model-content .Model-pay-button:hover,
+.Model-content .Model-exit-button:hover{
+    background-color: #ddd;
+    color: black;
+    cursor: pointer;
+}
+
+.Model-content .Model-exit-button{
+    border: 0;
+    background-color: #f44336;
+    color: white;
+    margin: 16px 0;
+    padding: 8px 16px;
+    font-size: 16px;
+
+}
+
+.Model-content .Model-info{
+    float: right;
+    margin: 16px 0;
+}
+/* CONTACT */
+.info-panel{
+    float: left;
+}
+.info-panel .info-text{
+    padding: 8px;
+}
+.input-panel{
+    float: right;
+    height: 100%;
+    width: 50%;
+}
+.input-panel >.panel-textbox{
+    float: left;
+    padding: 12px;
+    width: 48%;
+    margin-left: 4%;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+.input-panel >.panel-textbox:first-child{
+    margin-left: 0;
+}
+
+.input-panel >.panel-messagebox{
+    margin: 16px 0;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 12px;
+    width: 100%;
+}
+.input-panel >.panel-button{
+    border: 0;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    float: right;
+    top:0;
+}
+.input-panel >.panel-button:hover{
+    color: black;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+/* -------------PAGE FOOTER-------------- */
+
+#footer{
+    text-align: center;
+    padding: 64px 16px;
+    margin-bottom: 64px;
+    height: var(--header-height);
+
+    color: rgb(180, 179, 179);
+}
+#footer .footer-text{
+    padding: 24px 0;
+}
+#footer i{
+    margin: 1px;
+    font-size: 24px;
+}
+#footer i:hover{
+    opacity: 0.2;
+    cursor:default;
+}
+#footer .footer-link{
+    color: rgb(180, 179, 179);
+}
+.EndImg{
+    width: 100%;
+}
